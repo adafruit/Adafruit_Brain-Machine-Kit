@@ -1,5 +1,5 @@
 # MCU name
-MCU = attiny85
+MCU = attiny25
 F_CPU = 8000000
 
 # Output format. (can be srec, ihex, binary)
