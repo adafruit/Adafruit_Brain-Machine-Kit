@@ -93,7 +93,8 @@ AVRDUDE_PROGRAMMER = usbtiny
 
 AVRDUDE_PORT = usb        # programmer connected to serial device
 
-AVRDUDE_WRITE_FLASH = -B 10 -U flash:w:$(TARGET).hex
+AVRDUDE_WRITE_FLASH = -B 1 -U flash:w:$(TARGET).hex
+AVRDUDE_VERIFY_FLASH = -B 1 -U flash:v:$(TARGET).hex
 #AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
 
 AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER)
@@ -246,12 +247,15 @@ reset:
 program: $(TARGET).hex $(TARGET).eep
 	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) $(AVRDUDE_WRITE_EEPROM)
 
+verify: $(TARGET).hex $(TARGET).eep
+	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_VERIFY_FLASH)
+
 full: $(TARGET).hex
 	make burn-fuse
 	make program
 
 burn-fuse:
-	$(AVRDUDE) $(AVRDUDE_FLAGS) -B 250 -u -U lfuse:w:0xe2:m -U hfuse:w:0xde:m
+	$(AVRDUDE) $(AVRDUDE_FLAGS) -B 250 -u -U lfuse:w:0xe2:m -U hfuse:w:0xd6:m
 
 read-fuse:
 	$(AVRDUDE) $(AVRDUDE_FLAGS) -u -U lfuse:r:l.txt:r
