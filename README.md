@@ -1,6 +1,8 @@
 # The Brain Machine Kit
 
-<a href="http://www.adafruit.com/products/284"><img src="assets/board.jpg?raw=true" width="500px"></a>
+<a href="http://www.adafruit.com/products/287"><img src="assets/board.jpg?raw=true" width="500px">
+Click here to purchase one from the Adafruit shop
+</a>
 
 Relax and rejuvenate as your brain synchronizes to a wonderful meditative state, and enjoy as you hallucinate beautiful colors and patterns from your subconscious mind!
 
