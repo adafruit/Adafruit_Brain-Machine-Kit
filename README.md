@@ -1,6 +1,6 @@
 # The Brain Machine Kit
 
-<a href="http://www.adafruit.com/products/287"><img src="assets/board.jpg?raw=true" width="500px">
+<a href="http://www.adafruit.com/products/287"><img src="assets/board.jpg?raw=true" width="500px"><br/>
 Click here to purchase one from the Adafruit shop
 </a>
 
